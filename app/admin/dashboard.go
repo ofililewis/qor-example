@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/jinzhu/now"
+	"github.com/ofililewis/qor-example/config/db"
 	"github.com/qor/admin"
-	"github.com/qor/qor-example/config/db"
 )
 
 type Chart struct {

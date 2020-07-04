@@ -10,26 +10,26 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
+	"github.com/ofililewis/qor-example/app/account"
+	adminapp "github.com/ofililewis/qor-example/app/admin"
+	"github.com/ofililewis/qor-example/app/api"
+	"github.com/ofililewis/qor-example/app/enterprise"
+	"github.com/ofililewis/qor-example/app/home"
+	"github.com/ofililewis/qor-example/app/orders"
+	"github.com/ofililewis/qor-example/app/pages"
+	"github.com/ofililewis/qor-example/app/products"
+	"github.com/ofililewis/qor-example/app/static"
+	"github.com/ofililewis/qor-example/config"
+	"github.com/ofililewis/qor-example/config/application"
+	"github.com/ofililewis/qor-example/config/auth"
+	"github.com/ofililewis/qor-example/config/bindatafs"
+	"github.com/ofililewis/qor-example/config/db"
+	_ "github.com/ofililewis/qor-example/config/db/migrations"
+	"github.com/ofililewis/qor-example/utils"
+	"github.com/ofililewis/qor-example/utils/funcmapmaker"
 	"github.com/qor/admin"
 	"github.com/qor/publish2"
 	"github.com/qor/qor"
-	"github.com/qor/qor-example/app/account"
-	adminapp "github.com/qor/qor-example/app/admin"
-	"github.com/qor/qor-example/app/api"
-	"github.com/qor/qor-example/app/enterprise"
-	"github.com/qor/qor-example/app/home"
-	"github.com/qor/qor-example/app/orders"
-	"github.com/qor/qor-example/app/pages"
-	"github.com/qor/qor-example/app/products"
-	"github.com/qor/qor-example/app/static"
-	"github.com/qor/qor-example/config"
-	"github.com/qor/qor-example/config/application"
-	"github.com/qor/qor-example/config/auth"
-	"github.com/qor/qor-example/config/bindatafs"
-	"github.com/qor/qor-example/config/db"
-	_ "github.com/qor/qor-example/config/db/migrations"
-	"github.com/qor/qor-example/utils/funcmapmaker"
-	"github.com/qor/qor/utils"
 )
 
 func main() {
@@ -97,11 +97,11 @@ func main() {
 	Application.Use(enterprise.New(&enterprise.Config{}))
 	Application.Use(static.New(&static.Config{
 		Prefixs: []string{"/system"},
-		Handler: utils.FileServer(http.Dir(filepath.Join(config.Root, "public"))),
+		Handler: http.FileServer(http.Dir(filepath.Join(config.Root, "public"))),
 	}))
 	Application.Use(static.New(&static.Config{
 		Prefixs: []string{"javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"},
-		Handler: bindatafs.AssetFS.FileServer(http.Dir("public"), "javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"),
+		Handler: bindatafs.AssetFS.FileServer(http.Dir("public"), "javascript", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"),
 	}))
 
 	if *compileTemplate {

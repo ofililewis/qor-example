@@ -19,8 +19,8 @@ import (
 	"github.com/qor/sorting"
 	"github.com/qor/validations"
 
-	"github.com/qor/qor-example/config/db"
-	"github.com/qor/qor-example/models/seo"
+	"github.com/ofililewis/qor-example/config/db"
+	"github.com/ofililewis/qor-example/models/seo"
 )
 
 type Product struct {

@@ -6,13 +6,13 @@ import (
 	"html/template"
 
 	"github.com/jinzhu/gorm"
+	"github.com/ofililewis/qor-example/config/application"
+	"github.com/ofililewis/qor-example/models/products"
+	"github.com/ofililewis/qor-example/utils/funcmapmaker"
 	"github.com/qor/admin"
 	"github.com/qor/media"
 	"github.com/qor/media/media_library"
 	"github.com/qor/qor"
-	"github.com/qor/qor-example/config/application"
-	"github.com/qor/qor-example/models/products"
-	"github.com/qor/qor-example/utils/funcmapmaker"
 	"github.com/qor/render"
 )
 

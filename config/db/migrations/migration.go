@@ -1,20 +1,20 @@
 package migrations
 
 import (
+	"github.com/ofililewis/qor-example/app/admin"
+	"github.com/ofililewis/qor-example/config/db"
+	"github.com/ofililewis/qor-example/models/blogs"
+	"github.com/ofililewis/qor-example/models/orders"
+	"github.com/ofililewis/qor-example/models/products"
+	"github.com/ofililewis/qor-example/models/seo"
+	"github.com/ofililewis/qor-example/models/settings"
+	"github.com/ofililewis/qor-example/models/stores"
+	"github.com/ofililewis/qor-example/models/users"
 	"github.com/qor/activity"
 	"github.com/qor/auth/auth_identity"
 	"github.com/qor/banner_editor"
 	"github.com/qor/help"
 	"github.com/qor/media/asset_manager"
-	"github.com/qor/qor-example/app/admin"
-	"github.com/qor/qor-example/config/db"
-	"github.com/qor/qor-example/models/blogs"
-	"github.com/qor/qor-example/models/orders"
-	"github.com/qor/qor-example/models/products"
-	"github.com/qor/qor-example/models/seo"
-	"github.com/qor/qor-example/models/settings"
-	"github.com/qor/qor-example/models/stores"
-	"github.com/qor/qor-example/models/users"
 	"github.com/qor/transition"
 )
 

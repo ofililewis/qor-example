@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
+	"github.com/ofililewis/qor-example/config"
+	"github.com/ofililewis/qor-example/models/users"
+	"github.com/ofililewis/qor-example/utils"
 	amazonpay "github.com/qor/amazon-pay-sdk-go"
-	"github.com/qor/qor-example/config"
-	"github.com/qor/qor-example/models/users"
-	"github.com/qor/qor-example/utils"
 	"github.com/qor/transition"
 )
 
