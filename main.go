@@ -25,11 +25,12 @@ import (
 	"github.com/ofililewis/qor-example/config/bindatafs"
 	"github.com/ofililewis/qor-example/config/db"
 	_ "github.com/ofililewis/qor-example/config/db/migrations"
-	"github.com/ofililewis/qor-example/utils"
+
 	"github.com/ofililewis/qor-example/utils/funcmapmaker"
 	"github.com/qor/admin"
 	"github.com/qor/publish2"
 	"github.com/qor/qor"
+	"github.com/qor/qor/utils"
 )
 
 func main() {
@@ -97,10 +98,10 @@ func main() {
 	Application.Use(enterprise.New(&enterprise.Config{}))
 	Application.Use(static.New(&static.Config{
 		Prefixs: []string{"/system"},
-		Handler: http.FileServer(http.Dir(filepath.Join(config.Root, "public"))),
+		Handler: utils.FileServer(http.Dir(filepath.Join(config.Root, "public"))),
 	}))
 	Application.Use(static.New(&static.Config{
-		Prefixs: []string{"javascripts", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"},
+		Prefixs: []string{"javascript", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"},
 		Handler: bindatafs.AssetFS.FileServer(http.Dir("public"), "javascript", "stylesheets", "images", "dist", "fonts", "vendors", "favicon.ico"),
 	}))
 

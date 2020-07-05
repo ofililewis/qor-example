@@ -1,4 +1,5 @@
 db:
   adapter: mysql
-  name: qor_example
+  name: parkwella_db
   user: root
+  password: P@ssw0rd)
