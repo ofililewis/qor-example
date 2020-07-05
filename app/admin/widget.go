@@ -127,7 +127,7 @@ func SetupWidget(Admin *admin.Admin) {
 	imageRes := Admin.NewResource(&imageSetting{})
 	imageRes.Meta(&admin.Meta{Name: "Image"})
 
-	banner_editor.RegisterViewPath("github.com/qor/qor-example/app/views/banner_editor")
+	banner_editor.RegisterViewPath("github.com/ofililewis/qor-example/app/views/banner_editor")
 	banner_editor.RegisterElement(&banner_editor.Element{
 		Icon:     "<i class=material-icons>short_text</i>",
 		Name:     "Add Header",
